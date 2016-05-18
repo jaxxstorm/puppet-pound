@@ -25,7 +25,10 @@ End
 
 Service
   <%- @backend.each_pair do |back_addr, back_port| -%>
-  BackEnd
+    BackEnd
+    <% if @https_enable -%>
+    HTTPS
+    <% end -%>
     Address <%= back_addr %>
     Port <%= back_port %>
   End
